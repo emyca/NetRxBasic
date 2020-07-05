@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">NetRxBasic</string>
+
+    <string name="image_description">image content</string>
+
+    <string name="bnav_item_posts">posts</string>
+    <string name="bnav_item_photos">photos</string>
+    <string name="bnav_item_users">users</string>
+
+    <string name="text_stub">sunt aut facere repellat provident occaecati
+        excepturi optio reprehenderit</string>
+    <string name="name_stub">Leanne Graham</string>
+    <string name="email_stub">sSincere@april.biz</string>
+    <string name="phone_stub">099 123 4567</string>
+
+    <string name="something_wrong">Something wrong!</string>
+
+</resources>
