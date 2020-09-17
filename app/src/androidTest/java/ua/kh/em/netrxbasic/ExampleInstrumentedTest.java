@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("ua.kh.em.netrx", appContext.getPackageName());
+        assertEquals("ua.kh.em.netrxbasic", appContext.getPackageName());
     }
 }
