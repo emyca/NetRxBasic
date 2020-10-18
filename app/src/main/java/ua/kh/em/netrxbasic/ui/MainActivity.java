@@ -42,18 +42,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void handleFragmentNav() {
         bottomNav.setOnNavigationItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.bn_item_post:
-                    updateFragment(PostFragment.newInstance());
-                    break;
-                case R.id.bn_item_photo:
-                    fragmentPost.setVisibility(View.GONE);
-                    updateFragment(PhotoFragment.newInstance());
-                    break;
-                case R.id.bn_item_user:
-                    fragmentPost.setVisibility(View.GONE);
-                    updateFragment(UserFragment.newInstance());
-                    break;
+            int id = item.getItemId();
+            if (id == R.id.bn_item_post) {
+                updateFragment(PostFragment.newInstance());
+            }else if (id == R.id.bn_item_photo) {
+                fragmentPost.setVisibility(View.GONE);
+                updateFragment(PhotoFragment.newInstance());
+            }else if (id == R.id.bn_item_user) {
+                fragmentPost.setVisibility(View.GONE);
+                updateFragment(UserFragment.newInstance());
             }
             return true;
         });
