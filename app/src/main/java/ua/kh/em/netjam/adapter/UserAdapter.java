@@ -1,4 +1,4 @@
-package ua.kh.em.netrxbasic.adapter;
+package ua.kh.em.netjam.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import ua.kh.em.netrxbasic.R;
-import ua.kh.em.netrxbasic.model.User;
+import ua.kh.em.netjam.R;
+import ua.kh.em.netjam.model.User;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
 

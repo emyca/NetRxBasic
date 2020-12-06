@@ -1,4 +1,4 @@
-package ua.kh.em.netrxbasic.ui;
+package ua.kh.em.netjam.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import ua.kh.em.netrxbasic.R;
+import ua.kh.em.netjam.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package ua.kh.em.netrxbasic.ui;
+package ua.kh.em.netjam.ui;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -24,31 +24,33 @@ import java.util.List;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
-import ua.kh.em.netrxbasic.R;
-import ua.kh.em.netrxbasic.adapter.UserAdapter;
-import ua.kh.em.netrxbasic.model.User;
-import ua.kh.em.netrxbasic.utils.CheckNet;
-import ua.kh.em.netrxbasic.viewmodel.UserViewModel;
+import ua.kh.em.netjam.R;
+import ua.kh.em.netjam.adapter.PostAdapter;
+import ua.kh.em.netjam.model.Post;
+import ua.kh.em.netjam.utils.CheckNet;
+import ua.kh.em.netjam.viewmodel.PostViewModel;
 
-public class UserFragment extends Fragment {
+
+public class PostFragment extends Fragment {
 
     Context context;
     RecyclerView recyclerView;
-    ArrayList<User> list;
-    UserAdapter adapter;
+    ArrayList<Post> list;
+    PostAdapter adapter;
     private View view;
     CompositeDisposable disposable;
     ProgressBar progressBar;
-    UserViewModel viewModel;
+    PostViewModel viewModel;
 
-    public static UserFragment newInstance() {
-        return new UserFragment();
+    public static PostFragment newInstance() {
+        return new PostFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_user, container, false);
+
+        view = inflater.inflate(R.layout.fragment_post, container, false);
         disposable = new CompositeDisposable();
         initViews();
         setupRecyclerView();
@@ -60,7 +62,7 @@ public class UserFragment extends Fragment {
 
     private void initViews() {
         progressBar = view.findViewById(R.id.progressbar);
-        recyclerView = view.findViewById(R.id.list_users);
+        recyclerView = view.findViewById(R.id.list_posts);
     }
 
     private void setupRecyclerView() {
@@ -76,7 +78,7 @@ public class UserFragment extends Fragment {
 
             recyclerView.setHasFixedSize(true);
             list = new ArrayList<>();
-            adapter = new UserAdapter(list);
+            adapter = new PostAdapter(list);
             recyclerView.setAdapter(adapter);
         }else {
             adapter.notifyDataSetChanged();
@@ -86,17 +88,17 @@ public class UserFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        viewModel = new ViewModelProvider(this).get(UserViewModel.class);
-        disposable.add(viewModel.loadUsers()
+        viewModel = new ViewModelProvider(this).get(PostViewModel.class);
+        disposable.add(viewModel.loadPosts()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::handleResponse,this::handleError));
     }
 
-    private void handleResponse(List<User> users) {
-        if (users != null) {
+    private void handleResponse(List<Post> posts) {
+        if (posts != null) {
             progressBar.setVisibility(View.GONE);
-            adapter.addListUser(users);
+            adapter.addListPost(posts);
         }else if (list.isEmpty()) {
             progressBar.setVisibility(View.GONE);
             Toast.makeText(context, R.string.something_wrong, Toast.LENGTH_LONG).show();

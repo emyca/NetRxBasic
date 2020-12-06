@@ -1,4 +1,4 @@
-package ua.kh.em.netrxbasic.utils;
+package ua.kh.em.netjam.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

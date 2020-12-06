@@ -1,12 +1,12 @@
-package ua.kh.em.netrxbasic.viewmodel;
+package ua.kh.em.netjam.viewmodel;
 
 import androidx.lifecycle.ViewModel;
 
 import java.util.List;
 
 import io.reactivex.Flowable;
-import ua.kh.em.netrxbasic.model.Photo;
-import ua.kh.em.netrxbasic.repository.AppRepository;
+import ua.kh.em.netjam.model.Photo;
+import ua.kh.em.netjam.repository.AppRepository;
 
 public class PhotoViewModel extends ViewModel {
 

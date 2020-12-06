@@ -1,4 +1,4 @@
-package ua.kh.em.netrxbasic;
+package ua.kh.em.netjam;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package ua.kh.em.netrxbasic.network;
+package ua.kh.em.netjam.network;
 
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Retrofit;

@@ -1,4 +1,4 @@
-package ua.kh.em.netrxbasic.adapter;
+package ua.kh.em.netjam.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +14,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-import ua.kh.em.netrxbasic.R;
-import ua.kh.em.netrxbasic.model.Photo;
+import ua.kh.em.netjam.R;
+import ua.kh.em.netjam.model.Photo;
 
 public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder> {
 

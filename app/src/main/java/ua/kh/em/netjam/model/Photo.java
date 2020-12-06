@@ -1,4 +1,4 @@
-package ua.kh.em.netrxbasic.model;
+package ua.kh.em.netjam.model;
 
 import com.google.gson.annotations.SerializedName;
 
