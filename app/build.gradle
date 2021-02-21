@@ -41,7 +41,7 @@ dependencies {
 
     // ViewModel
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation "androidx.lifecycle:lifecycle-common-java8:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.3.0"
 
     // Retrofit, Java 8+, Android 5+
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
