@@ -1,4 +1,4 @@
-package ua.kh.em.netjam.ui;
+package ua.kh.em.netjam.ui.view;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -25,30 +25,30 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 import ua.kh.em.netjam.R;
-import ua.kh.em.netjam.adapter.PhotoAdapter;
-import ua.kh.em.netjam.model.Photo;
+import ua.kh.em.netjam.ui.adapter.UserAdapter;
+import ua.kh.em.netjam.data.model.User;
 import ua.kh.em.netjam.utils.CheckNet;
-import ua.kh.em.netjam.viewmodel.PhotoViewModel;
+import ua.kh.em.netjam.ui.viewmodel.UserViewModel;
 
-public class PhotoFragment extends Fragment {
+public class UserFragment extends Fragment {
 
     Context context;
     RecyclerView recyclerView;
-    ArrayList<Photo> list;
-    PhotoAdapter adapter;
+    ArrayList<User> list;
+    UserAdapter adapter;
     private View view;
     CompositeDisposable disposable;
     ProgressBar progressBar;
-    PhotoViewModel viewModel;
+    UserViewModel viewModel;
 
-    public static PhotoFragment newInstance() {
-        return new PhotoFragment();
+    public static UserFragment newInstance() {
+        return new UserFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_photo, container, false);
+        view = inflater.inflate(R.layout.fragment_user, container, false);
         disposable = new CompositeDisposable();
         initViews();
         setupRecyclerView();
@@ -60,7 +60,7 @@ public class PhotoFragment extends Fragment {
 
     private void initViews() {
         progressBar = view.findViewById(R.id.progressbar);
-        recyclerView = view.findViewById(R.id.list_photos);
+        recyclerView = view.findViewById(R.id.list_users);
     }
 
     private void setupRecyclerView() {
@@ -76,7 +76,7 @@ public class PhotoFragment extends Fragment {
 
             recyclerView.setHasFixedSize(true);
             list = new ArrayList<>();
-            adapter = new PhotoAdapter(list);
+            adapter = new UserAdapter(list);
             recyclerView.setAdapter(adapter);
         }else {
             adapter.notifyDataSetChanged();
@@ -86,17 +86,17 @@ public class PhotoFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        viewModel = new ViewModelProvider(this).get(PhotoViewModel.class);
-        disposable.add(viewModel.loadPhotos()
+        viewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        disposable.add(viewModel.loadUsers()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::handleResponse,this::handleError));
     }
 
-    private void handleResponse(List<Photo> photos) {
-        if (photos != null) {
+    private void handleResponse(List<User> users) {
+        if (users != null) {
             progressBar.setVisibility(View.GONE);
-            adapter.addListPhoto(photos);
+            adapter.addListUser(users);
         }else if (list.isEmpty()) {
             progressBar.setVisibility(View.GONE);
             Toast.makeText(context, R.string.something_wrong, Toast.LENGTH_LONG).show();

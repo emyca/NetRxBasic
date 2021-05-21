@@ -1,14 +1,14 @@
-package ua.kh.em.netjam.repository;
+package ua.kh.em.netjam.data.repository;
 
 
 import java.util.List;
 
 import io.reactivex.Flowable;
-import ua.kh.em.netjam.model.Photo;
-import ua.kh.em.netjam.model.Post;
-import ua.kh.em.netjam.model.User;
-import ua.kh.em.netjam.network.ApiClient;
-import ua.kh.em.netjam.network.ApiService;
+import ua.kh.em.netjam.data.model.Photo;
+import ua.kh.em.netjam.data.model.Post;
+import ua.kh.em.netjam.data.model.User;
+import ua.kh.em.netjam.data.network.ApiClient;
+import ua.kh.em.netjam.data.network.ApiService;
 
 public class AppRepository {
 

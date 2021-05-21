@@ -1,12 +1,12 @@
-package ua.kh.em.netjam.network;
+package ua.kh.em.netjam.data.network;
 
 import java.util.List;
 
 import io.reactivex.Flowable;
 import retrofit2.http.GET;
-import ua.kh.em.netjam.model.Photo;
-import ua.kh.em.netjam.model.Post;
-import ua.kh.em.netjam.model.User;
+import ua.kh.em.netjam.data.model.Photo;
+import ua.kh.em.netjam.data.model.Post;
+import ua.kh.em.netjam.data.model.User;
 
 public interface ApiService {
 

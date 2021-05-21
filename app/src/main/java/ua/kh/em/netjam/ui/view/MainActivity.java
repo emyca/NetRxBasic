@@ -1,4 +1,4 @@
-package ua.kh.em.netjam.ui;
+package ua.kh.em.netjam.ui.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;

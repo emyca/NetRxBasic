@@ -1,4 +1,4 @@
-package ua.kh.em.netjam.adapter;
+package ua.kh.em.netjam.ui.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ua.kh.em.netjam.R;
-import ua.kh.em.netjam.model.Photo;
+import ua.kh.em.netjam.data.model.Photo;
 
 public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder> {
 

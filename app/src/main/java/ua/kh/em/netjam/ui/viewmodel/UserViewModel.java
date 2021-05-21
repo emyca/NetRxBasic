@@ -1,12 +1,12 @@
-package ua.kh.em.netjam.viewmodel;
+package ua.kh.em.netjam.ui.viewmodel;
 
 import androidx.lifecycle.ViewModel;
 
 import java.util.List;
 
 import io.reactivex.Flowable;
-import ua.kh.em.netjam.model.User;
-import ua.kh.em.netjam.repository.AppRepository;
+import ua.kh.em.netjam.data.model.User;
+import ua.kh.em.netjam.data.repository.AppRepository;
 
 public class UserViewModel extends ViewModel {
 
